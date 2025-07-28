@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundGraph DJ - Análisis Visual de Audio</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header minimalista -->
+        <header>
+            <h1>🎵 SoundGraph DJ</h1>
+            <p>Análisis visual profesional de audio</p>
+        </header>
+
+        <!-- Zona de upload -->
+        <div class="upload-section">
+            <div id="dropZone" class="drop-zone">
+                <div class="upload-icon">🎧</div>
+                <h3>Arrastra tu archivo de audio aquí</h3>
+                <p>Soporta MP3, WAV, M4A, FLAC</p>
+                <input type="file" id="fileInput" accept=".mp3,.wav,.m4a,.flac" hidden>
+                <button id="selectBtn" class="btn-primary">Seleccionar archivo</button>
+            </div>
+        </div>
+
+        <!-- Información del track -->
+        <div id="trackInfo" class="track-info hidden">
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Archivo:</span>
+                    <span id="fileName"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Duración:</span>
+                    <span id="duration"></span>
+                </div>
+                <div class="info-item bpm-highlight">
+                    <span class="label">BPM:</span>
+                    <span id="bpm"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="loadingSpinner" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Analizando audio... 🎵</p>
+        </div>
+
+        <!-- Visualizaciones -->
+        <div id="visualizations" class="visualizations hidden">
+            
+            <!-- 1. Waveform Realista -->
+            <div class="viz-section">
+                <h2>🌈 Waveform Realista - Espectro Visual de Frecuencias</h2>
+                <div id="colorfulWaveform" class="plot-container"></div>
+            </div>
+
+            <!-- 2. Mel-Spectrogram IA -->
+            <div class="viz-section">
+                <h2>🤖 Representación IA Generativa</h2>
+                <div id="melSpectrogram" class="plot-container">
+                    <img id="melSpectrogramImg" alt="Mel-Spectrogram" />
+                </div>
+            </div>
+
+            <!-- 3D Paisaje Sonoro PRINCIPAL -->
+            <div class="viz-section-main" id="fullscreen3D" style="display: none;">
+                <button id="closeFullscreen" class="close-btn">✕</button>
+                <h2>🏔️ Superficie Sonora 3D - Fullscreen</h2>
+                <div id="melSpectrogram3D" class="plot-container-3d-main"></div>
+            </div>
+            
+            <!-- Vista Normal 3D CON OPCIONES -->
+            <div class="viz-section">
+                <h2>🏔️ Paisaje Sonoro 3D - 
+                    <button id="openFullscreen" class="fullscreen-btn">📺 Ver Fullscreen</button>
+                    
+                    <!-- OPCIONES DE VISUALIZACIÓN -->
+                    <div class="viz-options">
+                        <label>Tipo:</label>
+                        <select id="viz3DType" class="viz-select">
+                            <option value="surface">🌊 Superficie Suave</option>
+                            <option value="wireframe">🕸️ Wireframe</option>
+                            <option value="scatter3d">⚡ Puntos 3D</option>
+                        </select>
+                        
+                        <label>Colorscale:</label>
+                        <select id="viz3DColor" class="viz-select">
+                            <option value="viridis">🌈 Viridis</option>
+                            <option value="plasma">🔥 Plasma</option>
+                            <option value="hot">🌋 Hot</option>
+                            <option value="cool">❄️ Cool</option>
+                        </select>
+                    </div>
+                </h2>
+                <div id="melSpectrogram3DPreview" class="plot-container"></div>
+            </div>
+
+            <!-- Reproductor de Audio con Sincronización 3D -->
+            <div class="viz-section">
+                <h2>🎵 Reproductor Sincronizado</h2>
+                <div class="audio-player">
+                    <audio id="audioPlayer" controls style="width: 100%; margin-bottom: 15px;">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <div class="player-info">
+                        <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+                        <div class="progress-bar">
+                            <div id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Error messages -->
+        <div id="errorMessage" class="error-message hidden"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html> 

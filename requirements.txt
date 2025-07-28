@@ -1,0 +1,12 @@
+fastapi>=0.104.1
+uvicorn>=0.24.0
+python-multipart>=0.0.6
+jinja2>=3.1.2
+librosa>=0.10.1
+numpy>=1.24.3
+matplotlib>=3.7.2
+plotly>=5.17.0
+pillow>=10.0.1
+pydub>=0.25.1
+scipy>=1.11.3
+aiofiles>=23.1.0 
