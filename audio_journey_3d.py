@@ -65,7 +65,7 @@ class AudioJourney3D:
             return {
                 'success': True,
                 'duration': len(y) / sr,
-                'html_3d': html_content,
+                'pyvista_data': html_content,  # Ahora contiene datos estructurados
                 'sync_data': sync_data,
                 'freq_bands': freq_bands_data,
                 'journey_stats': {
@@ -158,62 +158,22 @@ class AudioJourney3D:
         }
     
     def _create_pyvista_journey(self, journey_data):
-        """Crear visualización 3D interactiva con PyVista"""
+        """Crear datos de visualización 3D para PyVista (sin renderizar)"""
         
         landscape = journey_data['landscape']
         time_frames = journey_data['time_frames']
         band_names = journey_data['band_names']
         
-        # Crear malla estructurada
-        x_coords = time_frames
-        y_coords = np.arange(len(band_names))
+        # En lugar de crear HTML, retornamos los datos estructurados
+        # para que la aplicación desktop los use directamente
         
-        # Crear grid 3D
-        X, Y = np.meshgrid(x_coords, y_coords)
-        Z = landscape  # Intensidad como elevación
-        
-        # Crear mesh de PyVista
-        mesh = pv.StructuredGrid(X, Y, Z)
-        
-        # Agregar datos de intensidad para colorear
-        mesh['intensity'] = Z.ravel()
-        
-        # Configurar plotter
-        plotter = pv.Plotter(off_screen=True, window_size=[1200, 800])
-        
-        # Agregar superficie con colores
-        surface = plotter.add_mesh(
-            mesh, 
-            scalars='intensity',
-            cmap='plasma',  # Colormap musical
-            show_edges=False,
-            opacity=0.9,
-            smooth_shading=True
-        )
-        
-        # Configurar ejes
-        plotter.add_text("🕐 TIEMPO (segundos)", position='lower_left', font_size=12)
-        plotter.add_text("🎵 BANDAS DE FRECUENCIA", position='lower_right', font_size=12)
-        plotter.add_text("🔊 INTENSIDAD SONORA", position='upper_left', font_size=12)
-        
-        # Configurar cámara para vista óptima
-        plotter.camera_position = 'iso'
-        plotter.camera.azimuth = 45
-        plotter.camera.elevation = 30
-        
-        # Generar HTML interactivo
-        html_content = plotter.export_html('temp_journey.html', backend='trame')
-        
-        # Leer HTML generado
-        try:
-            with open('temp_journey.html', 'r', encoding='utf-8') as f:
-                html_content = f.read()
-        except:
-            html_content = "<p>Error generando HTML 3D</p>"
-        
-        plotter.close()
-        
-        return html_content
+        return {
+            'landscape': landscape,
+            'time_frames': time_frames,
+            'band_names': band_names,
+            'shape': landscape.shape,
+            'status': 'ready_for_desktop'
+        }
     
     def _create_sync_data(self, y, sr, journey_data):
         """Crear datos para sincronización temporal con audio"""
