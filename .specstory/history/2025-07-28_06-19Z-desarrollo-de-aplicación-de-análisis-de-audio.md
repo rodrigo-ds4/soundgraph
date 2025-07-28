@@ -6465,3 +6465,1143 @@ Recarga la página y:
 
 ---
 
+_**User**_
+
+me encanto guardemoslo..... experimentemos cosas capaz hay mejores opciones fuera de js... para el 3d y poder agregar algo que me permita darle play y ver por donde va en la representacion... digo algo en python puro que opinas? para el 3d me encanto entender una cancion asi.... en 3d me gustaria mejorar eso diseñar un viaje 3d x una cancion pero quiero q se vean tiempo entero 1 minuto x ejemplo.... y tambien graves medios y agudos como referencia.....
+
+---
+
+_**Assistant**_
+
+<think><details><summary>Thought Process</summary>El usuario está muy entusiasmado con el resultado actual y quiere:
+
+1. **Guardar el estado actual** - está satisfecho con lo que tenemos
+2. **Experimentar con alternativas a JavaScript** para el 3D - sugiere Python puro
+3. **Agregar funcionalidad de play sincronizado** con marcador en tiempo real
+4. **Mejorar el "viaje 3D"** por una canción completa (1 minuto ejemplo)
+5. **Mostrar graves, medios y agudos como referencia** en el 3D
+
+Opciones en Python para 3D:
+- **Plotly Python** (puede generar HTML interactivo)
+- **Matplotlib 3D** (estático pero potente)
+- **PyVista** (muy potente para 3D científico)
+- **Mayavi** (3D científico avanzado)
+- **Open3D** (principalmente para point clouds)
+
+Para el "viaje 3D" me parece que quiere:
+1. Una visualización que muestre toda la canción (1 minuto completo)
+2. Separación clara de graves/medios/agudos
+3. Un marcador que se mueva en tiempo real con el audio
+4. Posiblemente una "cámara que viaje" por la superficie 3D
+
+Voy a proponer:
+1. Guardar el estado actual
+2. Explorar PyVista para 3D más avanzado
+3. Crear una versión con separación de frecuencias (graves/medios/agudos)
+4. Implementar sincronización temporal más avanzada</details></think>
+
+---
+
+¡**EXCELENTE IDEA!** 🎵✨ Me encanta tu visión de crear un **"viaje 3D por una canción"**. Tienes razón, **Python puro tiene opciones MÁS POTENTES** para 3D.
+
+Primero, **guardemos el estado actual** y luego exploremos **mejores alternativas**:
+
+---
+
+```bash
+git add . && git commit -m "🌊 ESTADO ACTUAL: 3D Surface con opciones + interpolación + fullscreen
+
+✅ Funcionalidades completadas:
+- Surface 3D interpolado y suave
+- 3 tipos: Surface, Wireframe, Scatter3D  
+- 4 colorscales: Viridis, Plasma, Hot, Cool
+- Fullscreen con ejes descriptivos
+- Performance optimizada (no se tilda)
+- Etiquetas claras: Tiempo(s), Frecuencia(Hz), Intensidad(dB)
+
+🎯 Próximo: Explorar Python 3D + viaje temporal + graves/medios/agudos"
+```
+
+```
+
+
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40589/api-v1-jd-4
+0589.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40589/api-v1-jdf-
+40589.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40589/api-v1-jdl-
+dn-emotions-l-2-dv-3.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40589/api-v1-jdl-
+dn-emotions-l-2-s-act-.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40589/api-v1-jdq-
+40589.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40589/data-v1-dl-
+4644182.arff.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40675/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40675/api-v1-jd-4
+0675.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40675/api-v1-jdf-
+40675.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40675/api-v1-jdl-
+dn-glass2-l-2-dv-1-s-dact.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40675/api-v1-jdl-
+dn-glass2-l-2-dv-1.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40675/api-v1-jdl-
+dn-glass2-l-2-s-act-.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40675/api-v1-jdq-
+40675.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40675/data-v1-dl-
+4965250.arff.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40945/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40945/api-v1-jd-4
+0945.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40945/api-v1-jdf-
+40945.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40945/api-v1-jdq-
+40945.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40945/data-v1-dl-
+16826755.arff.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40966/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40966/api-v1-jd-4
+0966.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40966/api-v1-jdf-
+40966.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40966/api-v1-jdl-
+dn-miceprotein-l-2-dv-4.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40966/api-v1-jdl-
+dn-miceprotein-l-2-s-act-.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40966/api-v1-jdq-
+40966.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_40966/data-v1-dl-
+17928620.arff.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42074/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42074/api-v1-jd-4
+2074.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42074/api-v1-jdf-
+42074.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42074/api-v1-jdq-
+42074.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42074/data-v1-dl-
+21552912.arff.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42585/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42585/api-v1-jd-4
+2585.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42585/api-v1-jdf-
+42585.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42585/api-v1-jdq-
+42585.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_42585/data-v1-dl-
+21854866.arff.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_561/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_561/api-v1-jd-561
+.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_561/api-v1-jdf-56
+1.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_561/api-v1-jdl-dn
+-cpu-l-2-dv-1.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_561/api-v1-jdl-dn
+-cpu-l-2-s-act-.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_561/api-v1-jdq-56
+1.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_561/data-v1-dl-52
+739.arff.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_61/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_61/api-v1-jd-61.j
+son.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_61/api-v1-jdf-61.
+json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_61/api-v1-jdl-dn-
+iris-l-2-dv-1.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_61/api-v1-jdl-dn-
+iris-l-2-s-act-.json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_61/api-v1-jdq-61.
+json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_61/data-v1-dl-61.
+arff.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_62/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_62/api-v1-jd-62.j
+son.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_62/api-v1-jdf-62.
+json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_62/api-v1-jdq-62.
+json.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/openml/id_62/data-v1-dl-523
+52.arff.gz
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/svmlight_classification.txt
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/svmlight_invalid.txt
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/svmlight_invalid_order.txt
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/data/svmlight_multilabel.txt
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_20news.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_arff_parser.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_california_housing.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_covtype.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_kddcup99.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_lfw.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_olivetti_faces.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_openml.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_rcv1.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_samples_generator.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/datasets/tests/test_svmlight_format.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_base.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/decomposition/_cdnmf_fast.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_cdnmf_fast.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_dict_learning.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_factor_analysis.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_fastica.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_incremental_pca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_kernel_pca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_lda.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_nmf.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/decomposition/_online_lda_fast.cpython-39-darwi
+n.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_online_lda_fast.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_pca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_sparse_pca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/_truncated_svd.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_dict_learning.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_factor_analysis.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_fastica.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_incremental_pca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_kernel_pca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_nmf.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_online_lda.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_pca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_sparse_pca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/decomposition/tests/test_truncated_svd.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/discriminant_analysis.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/dummy.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_bagging.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_forest.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_gb.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/ensemble/_gradient_boosting.cpython-39-darwin.s
+o
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_gradient_boosting.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/__init__.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/_binning.cpyth
+on-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/_binning.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/_bitset.cpytho
+n-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/_bitset.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/_bitset.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/_gradient_boos
+ting.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/_gradient_boos
+ting.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/_predictor.cpy
+thon-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/_predictor.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/binning.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/common.cpython
+-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/common.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/common.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/gradient_boost
+ing.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/grower.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/histogram.cpyt
+hon-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/histogram.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/predictor.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/splitting.cpyt
+hon-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/splitting.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/__init__
+.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_bin
+ning.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_bit
+set.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_com
+pare_lightgbm.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_gra
+dient_boosting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_gro
+wer.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_his
+togram.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_mon
+otonic_constraints.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_pre
+dictor.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_spl
+itting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/tests/test_war
+m_start.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_hist_gradient_boosting/utils.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_iforest.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_stacking.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_voting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/_weight_boosting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/test_bagging.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/test_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/test_common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/test_forest.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/test_gradient_boosting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/test_iforest.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/test_stacking.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/test_voting.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/ensemble/tests/test_weight_boosting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/exceptions.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/experimental/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/experimental/enable_halving_search_cv.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/experimental/enable_hist_gradient_boosting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/experimental/enable_iterative_imputer.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/experimental/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/experimental/tests/test_enable_hist_gradient_bo
+osting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/experimental/tests/test_enable_iterative_impute
+r.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/experimental/tests/test_enable_successive_halvi
+ng.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/README
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/_arff.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/_packaging/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/_packaging/_structures.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/_packaging/version.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/_scipy/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/_scipy/sparse/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/_scipy/sparse/csgraph/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/_scipy/sparse/csgraph/_laplacian.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/externals/conftest.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/_dict_vectorizer.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/_hash.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/feature_extraction/_hashing_fast.cpython-39-dar
+win.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/_hashing_fast.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/_stop_words.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/image.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/tests/test_dict_vectorizer.p
+y
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/tests/test_feature_hasher.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/tests/test_image.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/tests/test_text.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_extraction/text.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/_from_model.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/_mutual_info.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/_rfe.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/_sequential.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/_univariate_selection.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/_variance_threshold.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/tests/test_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/tests/test_chi2.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/tests/test_feature_select.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/tests/test_from_model.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/tests/test_mutual_info.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/tests/test_rfe.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/tests/test_sequential.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/feature_selection/tests/test_variance_threshold
+.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/frozen/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/frozen/_frozen.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/frozen/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/frozen/tests/test_frozen.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/gaussian_process/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/gaussian_process/_gpc.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/gaussian_process/_gpr.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/gaussian_process/kernels.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/gaussian_process/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/gaussian_process/tests/_mini_sequence_kernel.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/gaussian_process/tests/test_gpc.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/gaussian_process/tests/test_gpr.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/gaussian_process/tests/test_kernels.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/impute/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/impute/_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/impute/_iterative.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/impute/_knn.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/impute/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/impute/tests/test_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/impute/tests/test_common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/impute/tests/test_impute.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/impute/tests/test_knn.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/_partial_dependence.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/_pd_utils.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/_permutation_importance.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/_plot/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/_plot/decision_boundary.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/_plot/partial_dependence.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/_plot/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/_plot/tests/test_boundary_decision_d
+isplay.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/_plot/tests/test_plot_partial_depend
+ence.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/tests/test_partial_dependence.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/tests/test_pd_utils.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/inspection/tests/test_permutation_importance.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/isotonic.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/kernel_approximation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/kernel_ridge.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_bayes.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/linear_model/_cd_fast.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_cd_fast.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_coordinate_descent.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_glm/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_glm/_newton_solver.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_glm/glm.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_glm/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_glm/tests/test_glm.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_huber.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_least_angle.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_linear_loss.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_omp.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_passive_aggressive.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_perceptron.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_quantile.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_ransac.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_ridge.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_sag.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/linear_model/_sag_fast.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_sag_fast.pyx.tp
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/linear_model/_sgd_fast.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_sgd_fast.pyx.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_stochastic_gradient.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/_theil_sen.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_bayes.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_coordinate_descent.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_huber.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_least_angle.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_linear_loss.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_logistic.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_omp.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_passive_aggressive.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_perceptron.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_quantile.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_ransac.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_ridge.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_sag.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_sgd.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_sparse_coordinate_desce
+nt.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/linear_model/tests/test_theil_sen.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/__init__.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/manifold/_barnes_hut_tsne.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/_barnes_hut_tsne.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/_isomap.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/_locally_linear.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/_mds.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/_spectral_embedding.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/_t_sne.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/manifold/_utils.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/_utils.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/tests/test_isomap.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/tests/test_locally_linear.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/tests/test_mds.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/tests/test_spectral_embedding.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/manifold/tests/test_t_sne.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_classification.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/_dist_metrics.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_dist_metrics.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_dist_metrics.pxd.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_dist_metrics.pyx.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/__init__.
+py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_argkmin.
+cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_argkmin.
+pxd.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_argkmin.
+pyx.tp
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_argkmin_
+classmode.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_argkmin_
+classmode.pyx.tp
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_base.cpy
+thon-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_base.pxd
+.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_base.pyx
+.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_classmod
+e.pxd
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_datasets
+_pair.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_datasets
+_pair.pxd.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_datasets
+_pair.pyx.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_dispatch
+er.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_middle_t
+erm_computer.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_middle_t
+erm_computer.pxd.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_middle_t
+erm_computer.pyx.tp
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_radius_n
+eighbors.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_radius_n
+eighbors.pxd.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_radius_n
+eighbors.pyx.tp
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_radius_n
+eighbors_classmode.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/_radius_n
+eighbors_classmode.pyx.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_distances_reduction/meson.bui
+ld
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_fast.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_pairwise_fast.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/confusion_matrix.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/det_curve.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/precision_recall_curve.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/regression.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/roc_curve.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/tests/test_common_curve_display.p
+y
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/tests/test_confusion_matrix_displ
+ay.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/tests/test_det_curve_display.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/tests/test_precision_recall_displ
+ay.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/tests/test_predict_error_display.
+py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_plot/tests/test_roc_curve_display.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_ranking.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_regression.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/_scorer.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/_bicluster.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/_expected_mutual_info_fast.cpyt
+hon-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/_expected_mutual_info_fast.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/_supervised.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/_unsupervised.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/tests/test_bicluster.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/tests/test_common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/tests/test_supervised.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/cluster/tests/test_unsupervised.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/pairwise.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/tests/test_classification.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/tests/test_common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/tests/test_dist_metrics.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/tests/test_pairwise.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/tests/test_pairwise_distances_reduction
+.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/tests/test_ranking.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/tests/test_regression.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/metrics/tests/test_score_objects.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/mixture/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/mixture/_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/mixture/_bayesian_mixture.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/mixture/_gaussian_mixture.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/mixture/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/mixture/tests/test_bayesian_mixture.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/mixture/tests/test_gaussian_mixture.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/mixture/tests/test_mixture.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/_classification_threshold.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/_plot.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/_search.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/_search_successive_halving.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/_split.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/_validation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/tests/common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/tests/test_classification_thres
+hold.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/tests/test_plot.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/tests/test_search.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/tests/test_split.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/tests/test_successive_halving.p
+y
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/model_selection/tests/test_validation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/multiclass.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/multioutput.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/naive_bayes.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/__init__.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/neighbors/_ball_tree.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_ball_tree.pyx.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_binary_tree.pxi.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_classification.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_graph.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/neighbors/_kd_tree.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_kd_tree.pyx.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_kde.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_lof.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_nca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_nearest_centroid.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/neighbors/_partition_nodes.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_partition_nodes.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_partition_nodes.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/neighbors/_quad_tree.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_quad_tree.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_quad_tree.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_regression.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/_unsupervised.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_ball_tree.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_graph.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_kd_tree.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_kde.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_lof.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_nca.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_nearest_centroid.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_neighbors.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_neighbors_pipeline.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_neighbors_tree.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neighbors/tests/test_quad_tree.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/_multilayer_perceptron.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/_rbm.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/_stochastic_optimizers.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/tests/test_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/tests/test_mlp.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/tests/test_rbm.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/neural_network/tests/test_stochastic_optimizers
+.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/pipeline.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/__init__.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.cpython
+-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/_data.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/_discretization.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/_encoders.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/_function_transformer.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/_label.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/_polynomial.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/_target_encoder.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/preprocessing/_target_encoder_fast.cpython-39-d
+arwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/_target_encoder_fast.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/tests/test_common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/tests/test_data.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/tests/test_discretization.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/tests/test_encoders.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/tests/test_function_transformer.p
+y
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/tests/test_label.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/tests/test_polynomial.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/preprocessing/tests/test_target_encoder.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/random_projection.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/semi_supervised/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/semi_supervised/_label_propagation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/semi_supervised/_self_training.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/semi_supervised/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/semi_supervised/tests/test_label_propagation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/semi_supervised/tests/test_self_training.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/_bounds.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/_classes.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/svm/_liblinear.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/_liblinear.pxi
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/_liblinear.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/svm/_libsvm.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/_libsvm.pxi
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/_libsvm.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/svm/_libsvm_sparse.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/_libsvm_sparse.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/svm/_newrand.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/_newrand.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/liblinear/COPYRIGHT
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/liblinear/_cython_blas_helpers.h
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/liblinear/liblinear_helper.c
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/liblinear/linear.cpp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/liblinear/linear.h
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/liblinear/tron.cpp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/liblinear/tron.h
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/libsvm/LIBSVM_CHANGES
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/libsvm/_svm_cython_blas_helpers.h
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/libsvm/libsvm_helper.c
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/libsvm/libsvm_sparse_helper.c
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/libsvm/libsvm_template.cpp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/libsvm/svm.cpp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/libsvm/svm.h
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/src/newrand/newrand.h
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/tests/test_bounds.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/tests/test_sparse.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/svm/tests/test_svm.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/metadata_routing_common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_base.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_build.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_calibration.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_check_build.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_common.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_config.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_discriminant_analysis.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_docstring_parameters.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_docstrings.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_dummy.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_init.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_isotonic.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_kernel_approximation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_kernel_ridge.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_metadata_routing.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_metaestimators.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_metaestimators_metadata_routing.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_min_dependencies_readme.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_multiclass.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_multioutput.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_naive_bayes.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_pipeline.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_public_functions.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tests/test_random_projection.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_classes.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/tree/_criterion.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_criterion.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_criterion.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_export.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/tree/_partitioner.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_partitioner.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_partitioner.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_reingold_tilford.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/tree/_splitter.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_splitter.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_splitter.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/tree/_tree.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_tree.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_tree.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/tree/_utils.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_utils.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/_utils.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/tests/test_export.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/tests/test_monotonic_tree.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/tests/test_reingold_tilford.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/tree/tests/test_tree.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_arpack.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_array_api.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_available_if.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_bunch.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_chunking.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_cython_blas.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_cython_blas.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_cython_blas.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_encode.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_estimator_html_repr.css
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_estimator_html_repr.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_fast_dict.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_fast_dict.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_fast_dict.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_heap.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_heap.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_heap.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_indexing.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_isfinite.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_isfinite.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_joblib.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_mask.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_metadata_requests.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_missing.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_mocking.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_openmp_helpers.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_openmp_helpers.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_openmp_helpers.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_optional_dependencies.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_param_validation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_plotting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_pprint.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_random.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_random.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_random.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_response.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_seq_dataset.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_seq_dataset.pxd.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_seq_dataset.pyx.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_set_output.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_show_versions.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_sorting.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_sorting.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_sorting.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_tags.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_test_common/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_test_common/instance_generator.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_testing.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_typedefs.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_typedefs.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_typedefs.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_unique.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_user_interface.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_vector_sentinel.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_vector_sentinel.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_vector_sentinel.pyx
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/_weight_vector.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_weight_vector.pxd.tp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/_weight_vector.pyx.tp
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/arrayfuncs.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/arrayfuncs.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/class_weight.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/deprecation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/discovery.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/estimator_checks.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/extmath.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/fixes.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/graph.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/meson.build
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/metadata_routing.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/metaestimators.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/multiclass.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/murmurhash.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/murmurhash.pxd
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/murmurhash.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/optimize.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/parallel.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/random.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/sparsefuncs.py
+ create mode 100755 venv/lib/python3.9/site-packages/sklearn/utils/sparsefuncs_fast.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/sparsefuncs_fast.pyx
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/src/MurmurHash3.cpp
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/src/MurmurHash3.h
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/stats.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_arpack.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_array_api.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_arrayfuncs.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_bunch.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_chunking.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_class_weight.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_cython_blas.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_deprecation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_encode.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_estimator_checks.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_estimator_html_repr.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_extmath.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_fast_dict.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_fixes.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_graph.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_indexing.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_mask.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_metaestimators.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_missing.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_mocking.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_multiclass.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_murmurhash.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_optimize.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_parallel.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_param_validation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_plotting.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_pprint.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_random.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_response.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_seq_dataset.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_set_output.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_shortest_path.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_show_versions.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_sparsefuncs.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_stats.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_tags.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_testing.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_typedefs.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_unique.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_user_interface.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_utils.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_validation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/tests/test_weight_vector.py
+ create mode 100644 venv/lib/python3.9/site-packages/sklearn/utils/validation.py
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio-1.3.1.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio-1.3.1.dist-info/LICENSE
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio-1.3.1.dist-info/LICENSE.APACHE2
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio-1.3.1.dist-info/LICENSE.MIT
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio-1.3.1.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio-1.3.1.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio-1.3.1.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio-1.3.1.dist-info/top_level.txt
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio/_impl.py
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio/_tests/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio/_tests/test_sniffio.py
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio/_version.py
+ create mode 100644 venv/lib/python3.9/site-packages/sniffio/py.typed
+ create mode 100644 venv/lib/python3.9/site-packages/soundfile-0.13.1.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/soundfile-0.13.1.dist-info/LICENSE
+ create mode 100644 venv/lib/python3.9/site-packages/soundfile-0.13.1.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/soundfile-0.13.1.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/soundfile-0.13.1.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/soundfile-0.13.1.dist-info/top_level.txt
+ create mode 100644 venv/lib/python3.9/site-packages/soundfile.py
+ create mode 100644 venv/lib/python3.9/site-packages/soxr-0.5.0.post1.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/soxr-0.5.0.post1.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/soxr-0.5.0.post1.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/soxr-0.5.0.post1.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/soxr-0.5.0.post1.dist-info/licenses/COPYING.LGPL
+ create mode 100644 venv/lib/python3.9/site-packages/soxr-0.5.0.post1.dist-info/licenses/LICENSE-PFFFT.txt
+ create mode 100644 venv/lib/python3.9/site-packages/soxr-0.5.0.post1.dist-info/licenses/LICENSE-libsoxr.txt
+ create mode 100644 venv/lib/python3.9/site-packages/soxr-0.5.0.post1.dist-info/licenses/LICENSE.txt
+ create mode 100644 venv/lib/python3.9/site-packages/soxr/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/soxr/_version.py
+ create mode 100755 venv/lib/python3.9/site-packages/soxr/soxr_ext.cpython-39-darwin.so
+ create mode 100644 venv/lib/python3.9/site-packages/soxr/soxr_ext.pyi
+ create mode 100644 venv/lib/python3.9/site-packages/starlette-0.47.2.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/starlette-0.47.2.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/starlette-0.47.2.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/starlette-0.47.2.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/starlette-0.47.2.dist-info/licenses/LICENSE.md
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/_exception_handler.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/_utils.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/applications.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/authentication.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/background.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/concurrency.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/config.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/convertors.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/datastructures.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/endpoints.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/exceptions.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/formparsers.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/authentication.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/base.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/cors.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/errors.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/exceptions.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/gzip.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/httpsredirect.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/sessions.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/trustedhost.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/middleware/wsgi.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/py.typed
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/requests.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/responses.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/routing.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/schemas.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/staticfiles.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/status.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/templating.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/testclient.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/types.py
+ create mode 100644 venv/lib/python3.9/site-packages/starlette/websockets.py
+ create mode 100644 venv/lib/python3.9/site-packages/threadpoolctl-3.6.0.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/threadpoolctl-3.6.0.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/threadpoolctl-3.6.0.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/threadpoolctl-3.6.0.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/threadpoolctl-3.6.0.dist-info/licenses/LICENSE
+ create mode 100644 venv/lib/python3.9/site-packages/threadpoolctl.py
+ create mode 100644 venv/lib/python3.9/site-packages/typing_extensions-4.14.1.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/typing_extensions-4.14.1.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/typing_extensions-4.14.1.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/typing_extensions-4.14.1.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/typing_extensions-4.14.1.dist-info/licenses/LICENSE
+ create mode 100644 venv/lib/python3.9/site-packages/typing_extensions.py
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection-0.4.1.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection-0.4.1.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection-0.4.1.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection-0.4.1.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection-0.4.1.dist-info/licenses/LICENSE
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection/introspection.py
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection/py.typed
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection/typing_objects.py
+ create mode 100644 venv/lib/python3.9/site-packages/typing_inspection/typing_objects.pyi
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3-2.5.0.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3-2.5.0.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3-2.5.0.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3-2.5.0.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3-2.5.0.dist-info/licenses/LICENSE.txt
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/_base_connection.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/_collections.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/_request_methods.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/_version.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/connection.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/connectionpool.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/contrib/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/connection.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/emscripten_fetch_worker.js
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/fetch.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/request.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/response.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/contrib/pyopenssl.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/contrib/socks.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/exceptions.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/fields.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/filepost.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/http2/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/http2/connection.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/http2/probe.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/poolmanager.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/py.typed
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/response.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/connection.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/proxy.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/request.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/response.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/retry.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/ssl_.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/ssl_match_hostname.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/ssltransport.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/timeout.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/url.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/util.py
+ create mode 100644 venv/lib/python3.9/site-packages/urllib3/util/wait.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn-0.35.0.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn-0.35.0.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn-0.35.0.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn-0.35.0.dist-info/REQUESTED
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn-0.35.0.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn-0.35.0.dist-info/entry_points.txt
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn-0.35.0.dist-info/licenses/LICENSE.md
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/__main__.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/_subprocess.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/_types.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/config.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/importer.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/lifespan/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/lifespan/off.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/lifespan/on.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/logging.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/loops/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/loops/asyncio.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/loops/auto.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/loops/uvloop.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/main.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/middleware/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/middleware/asgi2.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/middleware/message_logger.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/middleware/wsgi.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/http/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/http/auto.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/http/flow_control.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/http/httptools_impl.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/utils.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/websockets/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/websockets/auto.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/websockets/websockets_impl.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/protocols/websockets/wsproto_impl.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/py.typed
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/server.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/supervisors/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/supervisors/basereload.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/supervisors/multiprocess.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/supervisors/statreload.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/supervisors/watchfilesreload.py
+ create mode 100644 venv/lib/python3.9/site-packages/uvicorn/workers.py
+ create mode 100644 venv/lib/python3.9/site-packages/zipp-3.23.0.dist-info/INSTALLER
+ create mode 100644 venv/lib/python3.9/site-packages/zipp-3.23.0.dist-info/METADATA
+ create mode 100644 venv/lib/python3.9/site-packages/zipp-3.23.0.dist-info/RECORD
+ create mode 100644 venv/lib/python3.9/site-packages/zipp-3.23.0.dist-info/WHEEL
+ create mode 100644 venv/lib/python3.9/site-packages/zipp-3.23.0.dist-info/licenses/LICENSE
+ create mode 100644 venv/lib/python3.9/site-packages/zipp-3.23.0.dist-info/top_level.txt
+ create mode 100644 venv/lib/python3.9/site-packages/zipp/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/zipp/_functools.py
+ create mode 100644 venv/lib/python3.9/site-packages/zipp/compat/__init__.py
+ create mode 100644 venv/lib/python3.9/site-packages/zipp/compat/overlay.py
+ create mode 100644 venv/lib/python3.9/site-packages/zipp/compat/py310.py
+ create mode 100644 venv/lib/python3.9/site-packages/zipp/compat/py313.py
+ create mode 100644 venv/lib/python3.9/site-packages/zipp/glob.py
+ create mode 100644 venv/pyvenv.cfg
+ create mode 100644 venv/share/jupyter/labextensions/jupyterlab-plotly/install.json
+ create mode 100644 venv/share/jupyter/labextensions/jupyterlab-plotly/package.json
+ create mode 100644 venv/share/jupyter/labextensions/jupyterlab-plotly/static/340.2a23c8275d47a2531dae.js
+ create mode 100644 venv/share/jupyter/labextensions/jupyterlab-plotly/static/remoteEntry.5153b2c003c011c482
+e3.js
+ create mode 100644 venv/share/jupyter/labextensions/jupyterlab-plotly/static/style.js
+ create mode 100644 venv/share/man/man1/ttx.1
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Great! The git commit was successful. Now I want to explore Python alternatives for 3D visualization. The user wants:
+
+1. Better alternatives to JavaScript for 3D
+2. Play functionality with synchronized marker
+3. A "journey" through a full minute of a song
+4. Separate bass, mids, and highs as reference
+
+Let me explore the best Python options:
+
+1. **PyVista** - Very powerful for scientific 3D, can generate interactive HTML
+2. **Plotly Python** - Can generate rich HTML files that work in browsers
+3. **Mayavi** - Great for scientific visualization but requires more setup
+4. **Matplotlib 3D** - Good but less interactive
+
+I think PyVista would be excellent for this because:
+- It can create stunning 3D surfaces
+- Can export to HTML for web integration
+- Has excellent support for temporal animation
+- Can handle large datasets efficiently
+- Great for scientific audio visualization
+
+Let me propose adding PyVista to requirements and creating a new 3D engine.</details></think>
+
+---
+
+¡Perfecto! **Estado guardado** ✅. Ahora exploremos **opciones MÁS POTENTES en Python** para tu **"viaje 3D por una canción"**:
+
+## 🚀 **Opciones Python para 3D (mucho mejores que JS):**
+
+### **1. PyVista** ⭐⭐⭐⭐⭐ (MI RECOMENDACIÓN)
+- **3D científico súper potente**
+- **Exporta HTML interactivo** (sin JavaScript custom)
+- **Animaciones temporales fluidas**
+- **Mallas de millones de puntos** sin problemas
+
+### **2. Plotly Python** ⭐⭐⭐⭐
+- **Genera HTML puro** (más eficiente que JS frontend)
+- **Animaciones con slider temporal** 
+- **API Python más limpia**
+
+### **3. Mayavi** ⭐⭐⭐
+- **3D científico avanzado**
+- **Excelente para análisis de audio**
+
+Vamos a **instalar PyVista** y crear tu **"viaje 3D completo"**:
+
+---
+
+
+
+---
+
+
+
+---
+

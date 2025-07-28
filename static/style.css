@@ -322,6 +322,90 @@ header p {
     box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
 }
 
+/* JOURNEY 3D STYLES */
+.journey-trigger-btn {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.journey-trigger-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+    background: linear-gradient(45deg, #ff8a80, #64ffda, #42a5f5);
+}
+
+.journey-container {
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 15px;
+    padding: 10px;
+    min-height: 85vh;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #ff6b6b;
+}
+
+.journey-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.journey-btn {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.journey-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.journey-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.journey-info span {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#journeyTime {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 /* Audio Player */
 .audio-player {
     background: rgba(255, 255, 255, 0.05);

@@ -123,6 +123,9 @@ function displayResults(data) {
     
     // Configurar botones fullscreen
     setupFullscreenButtons(data.mel_spectrogram_3d);
+    
+    // Mostrar botón de viaje 3D
+    document.getElementById('journeyTrigger').style.display = 'block';
 }
 
 // 1. Waveform Realista con Múltiples Bandas
@@ -732,5 +735,151 @@ function createMelSpectrogram3DWithOptions(mel3DData, vizType = 'surface', color
         responsive: true, displayModeBar: true, scrollZoom: true
     }).then(function(gd) {
         plot3DRef = gd;
+    });
+}
+
+// ========================
+// JOURNEY 3D FUNCTIONALITY
+// ========================
+
+// Configurar eventos del Journey 3D
+document.addEventListener('DOMContentLoaded', function() {
+    const journeyTrigger = document.getElementById('journeyTrigger');
+    const journeySection = document.getElementById('journeySection');
+    const closeJourney = document.getElementById('closeJourney');
+    const playJourney = document.getElementById('playJourney');
+    const pauseJourney = document.getElementById('pauseJourney');
+    
+    journeyTrigger.addEventListener('click', generateJourney3D);
+    closeJourney.addEventListener('click', closeJourneyVisualization);
+    playJourney.addEventListener('click', playJourneyAudio);
+    pauseJourney.addEventListener('click', pauseJourneyAudio);
+    
+    // Escape key para cerrar journey
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && journeySection.style.display === 'block') {
+            closeJourneyVisualization();
+        }
+    });
+});
+
+async function generateJourney3D() {
+    if (!currentAudioBlob) {
+        alert('❌ Primero debes subir un archivo de audio');
+        return;
+    }
+    
+    showLoading('🚀 Generando viaje 3D completo...');
+    
+    try {
+        // Crear FormData con el blob actual
+        const formData = new FormData();
+        formData.append('file', currentAudioBlob, 'audio_file');
+        
+        // Enviar al endpoint /journey
+        const response = await fetch('/journey', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const data = await response.json();
+        
+        hideLoading();
+        
+        if (data.success) {
+            currentJourneyData = data;
+            displayJourney3D(data);
+            showSuccess(`🏔️ Viaje 3D creado: ${data.duration.toFixed(1)}s con ${data.journey_stats.total_frames} frames`);
+        } else {
+            showError(data.error || 'Error generando viaje 3D');
+        }
+        
+    } catch (error) {
+        hideLoading();
+        showError(`Error en viaje 3D: ${error.message}`);
+    }
+}
+
+function displayJourney3D(journeyData) {
+    const journeySection = document.getElementById('journeySection');
+    const journeyVisualization = document.getElementById('journeyVisualization');
+    
+    // Mostrar sección
+    journeySection.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    // Insertar HTML de PyVista
+    journeyVisualization.innerHTML = journeyData.html_3d;
+    
+    // Configurar reproductor de audio para journey
+    setupJourneyAudio(journeyData);
+    
+    // Actualizar información temporal
+    updateJourneyTimeInfo(journeyData);
+}
+
+function setupJourneyAudio(journeyData) {
+    if (!currentAudioBlob) return;
+    
+    // Crear reproductor específico para journey
+    const audioURL = URL.createObjectURL(currentAudioBlob);
+    
+    // Simular player (en producción esto sería más complejo)
+    journeyAudioPlayer = new Audio(audioURL);
+    journeyAudioPlayer.addEventListener('timeupdate', () => {
+        updateJourneyProgress(journeyData);
+    });
+    
+    const totalTime = journeyData.duration;
+    document.getElementById('journeyTime').textContent = 
+        `0:00 / ${formatTime(totalTime)}`;
+}
+
+function updateJourneyProgress(journeyData) {
+    if (!journeyAudioPlayer) return;
+    
+    const currentTime = journeyAudioPlayer.currentTime;
+    const totalTime = journeyData.duration;
+    
+    // Actualizar display de tiempo
+    document.getElementById('journeyTime').textContent = 
+        `${formatTime(currentTime)} / ${formatTime(totalTime)}`;
+    
+    // Aquí se podría agregar marcador 3D dinámico en el futuro
+    // updateJourney3DMarker(currentTime, journeyData);
+}
+
+function playJourneyAudio() {
+    if (journeyAudioPlayer) {
+        journeyAudioPlayer.play();
+        document.getElementById('playJourney').textContent = '⏸️ Pausa';
+    }
+}
+
+function pauseJourneyAudio() {
+    if (journeyAudioPlayer) {
+        journeyAudioPlayer.pause();
+        document.getElementById('playJourney').textContent = '▶️ Play';
+    }
+}
+
+function closeJourneyVisualization() {
+    const journeySection = document.getElementById('journeySection');
+    journeySection.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    
+    // Parar audio si está reproduciéndose
+    if (journeyAudioPlayer) {
+        journeyAudioPlayer.pause();
+    }
+}
+
+function updateJourneyTimeInfo(journeyData) {
+    const stats = journeyData.journey_stats;
+    console.log(`🏔️ Journey Stats:`, {
+        duration: journeyData.duration,
+        frames: stats.total_frames,
+        freq_bands: stats.freq_bands,
+        mesh_points: stats.mesh_points
     });
 } 

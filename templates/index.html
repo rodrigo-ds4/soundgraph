@@ -23,6 +23,11 @@
                 <p>Soporta MP3, WAV, M4A, FLAC</p>
                 <input type="file" id="fileInput" accept=".mp3,.wav,.m4a,.flac" hidden>
                 <button id="selectBtn" class="btn-primary">Seleccionar archivo</button>
+                
+                <!-- BOTÓN NUEVO: VIAJE 3D -->
+                <button class="journey-trigger-btn" id="journeyTrigger" style="display: none;">
+                    🚀 GENERAR VIAJE 3D COMPLETO
+                </button>
             </div>
         </div>
 
@@ -67,6 +72,23 @@
                 </div>
             </div>
 
+            <!-- VIAJE 3D COMPLETO - NUEVA FUNCIONALIDAD -->
+            <div id="journeySection" class="viz-section-main" style="display: none;">
+                <button id="closeJourney" class="close-btn">✕</button>
+                <h2>🚀 VIAJE 3D COMPLETO - Explora 1 Minuto de tu Canción</h2>
+                <div class="journey-controls">
+                    <button id="playJourney" class="journey-btn">▶️ Play Viaje</button>
+                    <button id="pauseJourney" class="journey-btn">⏸️ Pausa</button>
+                    <span id="journeyTime">0:00 / 0:00</span>
+                </div>
+                <div id="journeyVisualization" class="journey-container"></div>
+                <div class="journey-info">
+                    <span>🎵 GRAVES</span>
+                    <span>🎶 MEDIOS</span>
+                    <span>🎵 AGUDOS</span>
+                </div>
+            </div>
+            
             <!-- 3D Paisaje Sonoro PRINCIPAL -->
             <div class="viz-section-main" id="fullscreen3D" style="display: none;">
                 <button id="closeFullscreen" class="close-btn">✕</button>
