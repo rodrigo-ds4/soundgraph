@@ -124,8 +124,8 @@ function displayResults(data) {
     // Configurar botones fullscreen
     setupFullscreenButtons(data.mel_spectrogram_3d);
     
-    // Mostrar botón de viaje 3D
-    document.getElementById('journeyTrigger').style.display = 'block';
+    // Journey 3D temporalmente deshabilitado (usar app desktop)
+    // document.getElementById('journeyTrigger').style.display = 'block';
 }
 
 // 1. Waveform Realista con Múltiples Bandas
@@ -763,41 +763,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Journey 3D deshabilitado temporalmente - usar app desktop
 async function generateJourney3D() {
-    if (!currentAudioBlob) {
-        alert('❌ Primero debes subir un archivo de audio');
-        return;
-    }
-    
-    showLoading('🚀 Generando viaje 3D completo...');
-    
-    try {
-        // Crear FormData con el blob actual
-        const formData = new FormData();
-        formData.append('file', currentAudioBlob, 'audio_file');
-        
-        // Enviar al endpoint /journey
-        const response = await fetch('/journey', {
-            method: 'POST',
-            body: formData
-        });
-        
-        const data = await response.json();
-        
-        hideLoading();
-        
-        if (data.success) {
-            currentJourneyData = data;
-            displayJourney3D(data);
-            showSuccess(`🏔️ Viaje 3D creado: ${data.duration.toFixed(1)}s con ${data.journey_stats.total_frames} frames`);
-        } else {
-            showError(data.error || 'Error generando viaje 3D');
-        }
-        
-    } catch (error) {
-        hideLoading();
-        showError(`Error en viaje 3D: ${error.message}`);
-    }
+    showError('🏔️ Journey 3D está disponible en la aplicación desktop. Usa: python run_desktop.py');
+    return;
 }
 
 function displayJourney3D(journeyData) {

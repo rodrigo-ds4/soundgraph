@@ -86,9 +86,14 @@ class AudioJourney3D:
         for band_name, (low_freq, high_freq) in self.freq_bands.items():
             # Diseñar filtro Butterworth
             nyquist = sr / 2
-            low = low_freq / nyquist
-            high = high_freq / nyquist
+            low = max(low_freq / nyquist, 0.01)  # Evitar frecuencias muy bajas
+            high = min(high_freq / nyquist, 0.99)  # Evitar frecuencias muy altas
             
+            # Verificar que las frecuencias sean válidas
+            if low >= high:
+                print(f"⚠️ Saltando banda {band_name}: frecuencias inválidas")
+                continue
+                
             # Filtro pasa banda
             b, a = butter(4, [low, high], btype='band')
             filtered_audio = filtfilt(b, a, y)
