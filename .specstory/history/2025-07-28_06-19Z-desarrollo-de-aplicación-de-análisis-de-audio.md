@@ -11920,11 +11920,613 @@ Ahora **creemos un README profesional en inglés**:
 
 ---
 
+<details><summary>Edit file: README.md</summary>
 
+Replace the entire README with a professional, technical English version without emojis
+
+**Chunk 1**
+Lines added: 190, lines removed: 102
+
+```diff
+@@ -1,117 +1,205 @@
+- # 🎵 SoundGraph DJ
+- 
+- **Análisis visual profesional de audio para DJs**
+- 
+- Una aplicación web minimalista que permite analizar archivos de audio y generar visualizaciones profesionales como las que encuentras en Serato, Virtual DJ, Traktor y Ableton Live.
++ # SoundGraph
++ 
++ **Professional Audio Analysis and Visualization Platform**
++ 
++ SoundGraph is a web-based audio analysis tool designed for DJs and music professionals. It provides advanced signal processing capabilities to generate professional-grade audio visualizations similar to those found in industry-standard software like Serato DJ, Virtual DJ, Traktor Pro, and Ableton Live.
+  
+- ## ✨ Características
+- 
+- ### 🎨 Visualizaciones Incluidas
+- 1. **Waveform Colorido** - Estilo Serato/VirtualDJ con separación por frecuencias (Graves=Rojo, Medios=Verde, Agudos=Azul)
+- 2. **Representación IA Generativa** - Mel-Spectrogram como imagen (estilo Riffusion/Stable Audio)
+- 3. **Espectrograma Ableton** - Frecuencias vs tiempo con colores dinámicos
+- 
+- ### 🔧 Funcionalidades
+- - ⚡ **Cálculo automático de BPM**
+- - 🎧 **Soporte múltiples formatos**: MP3, WAV, M4A, FLAC
+- - 📱 **Drag & Drop** minimalista
+- - 🎯 **API REST** con FastAPI
+- - 🌈 **Interfaz moderna** con gradientes y animaciones
+- 
+- ## 🚀 Instalación Rápida
+- 
+- ### Prerrequisitos
+- - Python 3.8+
+- - pip
+- 
+- ### 1. Clonar e instalar dependencias
++ ## Features
++ 
++ ### Audio Visualizations
++ - **Multi-frequency Waveform Analysis** - Color-coded waveform representation with frequency band separation (Bass/Red, Mids/Green, Highs/Blue)
++ - **Mel-Spectrogram Generation** - AI-style audio-to-image representation compatible with generative audio models
++ - **Real-time Spectrogram** - Frequency domain analysis with time-based progression
++ - **3D Audio Landscape** - Three-dimensional topographic representation of audio data
++ 
++ ### Technical Capabilities
++ - **Automatic BPM Detection** - Real-time tempo analysis using onset detection algorithms
++ - **Multi-format Support** - MP3, WAV, M4A, FLAC audio file processing
++ - **RESTful API** - FastAPI-based backend with JSON responses
++ - **Real-time Processing** - Efficient audio analysis with optimized algorithms
++ 
++ ## Installation
++ 
++ ### Prerequisites
++ - Python 3.8 or higher
++ - pip package manager
++ - Virtual environment (recommended)
++ 
++ ### Setup Instructions
++ 
++ 1. **Clone the repository**
++ ```bash
++ git clone https://github.com/yourusername/soundgraph.git
++ cd soundgraph
++ ```
++ 
++ 2. **Create virtual environment**
++ ```bash
++ python -m venv venv
++ source venv/bin/activate  # On Windows: venv\Scripts\activate
++ ```
++ 
++ 3. **Install dependencies**
+  ```bash
+- # Instalar dependencias
+  pip install -r requirements.txt
+- 
+- # Ejecutar servidor
+- python main.py
+- ```
+- 
+- ### 2. Abrir en navegador
++ ```
++ 
++ 4. **Start the application**
++ ```bash
++ uvicorn main:app --host 0.0.0.0 --port 8001 --reload
++ ```
++ 
++ 5. **Access the application**
+  ```
+- http://localhost:8000
++ http://localhost:8001
+  ```
+  
+- ## 📖 Uso
+- 
+- 1. **Arrastra** tu archivo de audio a la zona de drop
+- 2. **Espera** el análisis (unos segundos)
+- 3. **Disfruta** las 3 visualizaciones generadas automáticamente
+- 4. El **BPM** se calcula automáticamente
+- 
+- ## 🛠️ Stack Técnico
+- 
+- ### Backend (Python)
+- - **FastAPI** - API REST ultrarrápida
+- - **Librosa** - Análisis de audio profesional  
+- - **Matplotlib** - Gráficos estáticos
+- - **Plotly** - Visualizaciones interactivas
+- - **NumPy + SciPy** - Procesamiento matemático
+- 
+- ### Frontend
+- - **HTML5 + CSS3** - Minimalista y moderno
+- - **JavaScript ES6** - Sin frameworks pesados
+- - **Plotly.js** - Gráficos interactivos
+- - **Drag & Drop API** - UX fluida
+- 
+- ## 📁 Estructura del Proyecto
++ ## Usage
++ 
++ ### Web Interface
++ 1. Navigate to the web interface
++ 2. Upload audio file via drag-and-drop or file selector
++ 3. Wait for analysis processing (typically 2-5 seconds)
++ 4. View generated visualizations and BPM analysis
++ 
++ ### Desktop Application
++ For advanced 3D visualizations:
++ ```bash
++ python run_desktop.py
++ ```
++ 
++ ## Technical Architecture
++ 
++ ### Backend Stack
++ - **FastAPI** - High-performance Python web framework
++ - **Librosa** - Audio signal analysis and music information retrieval
++ - **NumPy/SciPy** - Numerical computing and signal processing
++ - **Matplotlib** - Static visualization generation
++ - **Plotly** - Interactive web-based visualizations
++ - **PyVista** - 3D scientific visualization (desktop app)
++ 
++ ### Frontend Stack
++ - **HTML5/CSS3** - Modern web standards
++ - **Vanilla JavaScript** - No framework dependencies
++ - **Plotly.js** - Interactive visualization rendering
++ - **Web Audio API** - Client-side audio handling
++ 
++ ### Audio Processing Pipeline
++ 1. **File Input** - Multi-format audio file handling with ffmpeg integration
++ 2. **Signal Processing** - Librosa-based audio analysis with STFT computation
++ 3. **Feature Extraction** - BPM detection, frequency analysis, onset detection
++ 4. **Visualization Generation** - Multiple rendering engines for different output types
++ 5. **Web Delivery** - JSON API responses with embedded visualization data
++ 
++ ## Project Structure
+  
+  ```
+  soundgraph/
+- ├── main.py                 # Servidor FastAPI
+- ├── audio_processor.py      # Procesamiento de audio
+- ├── requirements.txt        # Dependencias Python
++ ├── main.py                    # FastAPI application entry point
++ ├── audio_processor.py         # Core audio analysis engine
++ ├── audio_journey_3d.py        # 3D visualization processing
++ ├── soundgraph_desktop.py      # Desktop GUI application
++ ├── run_desktop.py             # Desktop application launcher
++ ├── requirements.txt           # Python dependencies
+  ├── templates/
+- │   └── index.html         # Frontend principal
+- └── static/
+-     ├── style.css          # Estilos CSS
+-     └── script.js          # JavaScript frontend
++ │   └── index.html            # Web interface template
++ ├── static/
++ │   ├── style.css            # Application styling
++ │   └── script.js            # Frontend JavaScript
++ └── README_DESKTOP.md        # Desktop application documentation
+  ```
+  
+- ## 🎯 Próximas Características
+- 
+- - 🤖 **Machine Learning**: Comparación de similitudes entre canciones
+- - 🥁 **Beat Detection**: Detección automática de golpes/drums
+- - 📊 **Análisis Científico**: Métricas avanzadas de cada canción
+- - 🔄 **Comparador**: Overlay de múltiples tracks
+- - 💾 **Exportar**: Guardar análisis en formato JSON/CSV
+- 
+- ## 🎛️ Para DJs
+- 
+- Esta herramienta es perfecta para:
+- - **Análisis de sets**: Entender la estructura de tus tracks
+- - **Preparación**: Conocer BPM y características antes del set
+- - **Educación**: Aprender cómo se ve cada tipo de música
+- - **Creatividad**: Inspirarse con las visualizaciones para nuevos sets
+- 
+- ## 🐛 Troubleshooting
++ ## API Endpoints
++ 
++ ### POST /upload
++ Processes audio file and returns analysis data.
++ 
++ **Request:** Multipart form data with audio file
++ **Response:** JSON with visualizations, BPM, and metadata
++ 
++ ### GET /health
++ Application health check endpoint.
++ 
++ **Response:** JSON status indicator
++ 
++ ## Development
++ 
++ ### Running in Development Mode
++ ```bash
++ uvicorn main:app --reload --port 8001
++ ```
++ 
++ ### Running Tests
++ ```bash
++ python test_pyvista.py  # Test 3D visualization capabilities
++ ```
++ 
++ ## Configuration
++ 
++ ### Audio Processing Parameters
++ - Sample Rate: 22,050 Hz (optimized for music analysis)
++ - FFT Window: 2048 samples
++ - Hop Length: 512 samples
++ - Mel Bands: 128 (for spectrograms)
++ 
++ ### Performance Optimization
++ - Efficient memory management for large audio files
++ - Parallel processing for multiple visualization types
++ - Caching for repeated analysis operations
++ 
++ ## Troubleshooting
+  
+- ### Error de instalación de librosa
++ ### Common Issues
++ 
++ **ffmpeg not found**
+  ```bash
+- # En Mac con M1/M2
+- pip install librosa --no-deps
+- pip install numba llvmlite
+- 
+- # En Linux
+- sudo apt-get install libsndfile1
+- ```
+- 
+- ### Puerto ocupado
++ # macOS
++ brew install ffmpeg
++ 
++ # Ubuntu/Debian
++ sudo apt-get install ffmpeg
++ 
++ # Windows
++ Download from https://ffmpeg.org/download.html
++ ```
++ 
++ **Port already in use**
+  ```bash
+- # Cambiar puerto en main.py línea final:
+- uvicorn.run(app, host="0.0.0.0", port=8001, reload=True)
+- ```
+- 
+- ## 📝 Licencia
+- 
+- MIT License - Úsalo como quieras 🚀
+- 
+- ---
+- 
+- **¡Hecho con ❤️ por un DJ que programa!** 🎧💻 
++ # Change port in main.py or use command line
++ uvicorn main:app --port 8002
++ ```
++ 
++ **Memory issues with large files**
++ - Limit audio file size to 10MB for optimal performance
++ - Use WAV format for fastest processing
++ - Ensure sufficient RAM (4GB+ recommended)
++ 
++ ## Future Development
++ 
++ ### Planned Features
++ - Machine learning-based song similarity analysis
++ - Advanced beat detection and rhythm analysis
++ - Scientific audio metrics and reporting
++ - Multi-track comparison and overlay
++ - Export capabilities (JSON, CSV, PNG formats)
++ 
++ ### Technical Roadmap
++ - WebAssembly integration for client-side processing
++ - GPU acceleration for large file analysis
++ - Real-time audio stream processing
++ - Plugin architecture for custom visualizations
++ 
++ ## Contributing
++ 
++ 1. Fork the repository
++ 2. Create a feature branch
++ 3. Implement changes with appropriate tests
++ 4. Submit a pull request with detailed description
++ 
++ ## License
++ 
++ MIT License - Open source software for educational and commercial use.
++ 
++ ## Technical Support
++ 
++ For technical issues, please refer to the troubleshooting section above or create an issue in the project repository. 
+```
+
+</details>
 
 ---
 
+<think><details><summary>Thought Process</summary>Now I need to set up Git and push to GitHub. Let me first initialize Git, add all the files, and create the initial commit. Then I'll help set up GitHub remote and push.
+</details></think>
 
+---
+
+Ahora **configuremos Git y subamos a GitHub**:
+
+---
+
+```bash
+cd /Users/rotpando/Desktop/soundgraph/soundgraph && git init
+```
+
+```
+Reinitialized existing Git repository in /Users/rotpando/Desktop/soundgraph/soun
+dgraph/.git/
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>It looks like Git was already initialized. Let me create a .gitignore file to exclude unnecessary files, then add everything and commit.
+</details></think>
+
+---
+
+<details><summary>Edit file: .gitignore</summary>
+
+Create a comprehensive .gitignore file for Python and audio projects
+
+**Chunk 1**
+Lines added: 92, lines removed: 1
+
+```diff
+@@ -1,1 +1,92 @@
+- 
++ # Python
++ __pycache__/
++ *.py[cod]
++ *$py.class
++ *.so
++ .Python
++ build/
++ develop-eggs/
++ dist/
++ downloads/
++ eggs/
++ .eggs/
++ lib/
++ lib64/
++ parts/
++ sdist/
++ var/
++ wheels/
++ pip-wheel-metadata/
++ share/python-wheels/
++ *.egg-info/
++ .installed.cfg
++ *.egg
++ MANIFEST
++ 
++ # Virtual Environment
++ venv/
++ env/
++ ENV/
++ env.bak/
++ venv.bak/
++ 
++ # IDE
++ .vscode/
++ .idea/
++ *.swp
++ *.swo
++ *~
++ 
++ # OS
++ .DS_Store
++ .DS_Store?
++ ._*
++ .Spotlight-V100
++ .Trashes
++ ehthumbs.db
++ Thumbs.db
++ 
++ # Audio files (optional - uncomment if you don't want to commit test audio files)
++ # *.mp3
++ # *.wav
++ # *.m4a
++ # *.flac
++ 
++ # Cache and temp files
++ *.tmp
++ *.temp
++ .cache/
++ temp/
++ 
++ # Logs
++ *.log
++ logs/
++ 
++ # Environment variables
++ .env
++ .env.local
++ .env.production
++ .env.staging
++ 
++ # PyVista cache
++ *.vtu
++ *.vtk
++ 
++ # Generated images
++ *.png
++ *.jpg
++ *.jpeg
++ *.gif
++ 
++ # Jupyter Notebook
++ .ipynb_checkpoints
++ 
++ # pytest
++ .pytest_cache/
++ .coverage
++ htmlcov/
++ 
++ # mypy
++ .mypy_cache/
++ .dmypy.json
++ dmypy.json 
+```
+
+</details>
+
+---
+
+<think><details><summary>Thought Process</summary>Now let me add all the files and create the initial commit.
+</details></think>
+
+---
+
+```bash
+git add -A
+```
+
+```
+rotpando@MBPdeRodrigo2 soundgraph % git add -A
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Now let me create the initial commit.
+</details></think>
+
+---
+
+```bash
+git commit -m "Initial commit: SoundGraph v1.0.0 - Professional audio analysis platform"
+```
+
+```
+<Graph v1.0.0 - Professional audio analysis platform"
+[main a4b053e] Initial commit: SoundGraph v1.0.0 - Professional audio analysis platform
+ 4 files changed, 678 insertions(+), 76 deletions(-)
+ create mode 100644 .gitignore
+rotpando@MBPdeRodrigo2 soundgraph %
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Perfect! Now I need to help the user create a GitHub repository and push the code. Let me check if they have GitHub configured locally.
+</details></think>
+
+---
+
+Perfecto! Ahora **vamos a subir a GitHub**. Primero necesitas:
+
+1. **Crear un repositorio en GitHub** (ve a github.com → New repository → "soundgraph")
+2. **Configurar el remote** (una vez creado el repo)
+
+Mientras tanto, verifiquemos tu configuración de Git:
+
+---
+
+```bash
+git config --global user.name && git config --global user.email
+```
+
+```
+rotpando@MBPdeRodrigo2 soundgraph % git config --global user.name && git config --global user.email
+rodrigo-ds4
+rod.desarasqueta@gmail.com
+rotpando@MBPdeRodrigo2 soundgraph %
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Great! The Git configuration is already set up. Now I can guide the user to create the GitHub repository. Since I can't create the repository for them directly, I'll provide instructions.
+</details></think>
+
+---
+
+¡Excelente! Tu Git está configurado. **Pasos para GitHub**:
+
+## **Opción 1: Crear repositorio desde comando (GitHub CLI)**
+Si tienes GitHub CLI instalado:
+
+---
+
+```bash
+gh repo create soundgraph --public --description "Professional audio analysis and visualization platform for DJs" --push
+```
+
+```
+rotpando@MBPdeRodrigo2 soundgraph % gh repo create soundgraph --public --description "Professional audio ana
+lysis and visualization platform forgh repo create soundgraph --public --description "Professional audio ana
+lysis and visualization platform for DJs" --push
+zsh: command not found: gh
+rotpando@MBPdeRodrigo2 soundgraph %
+```
+
+---
+
+<think><details><summary>Thought Process</summary>GitHub CLI is not installed. I'll provide the manual instructions for creating a GitHub repository and pushing the code.
+</details></think>
+
+---
+
+## **Opción 2: Manual (más confiable)**
+
+1. **Ve a GitHub.com** → Login → "New repository"
+2. **Nombre:** `soundgraph`
+3. **Descripción:** `Professional audio analysis and visualization platform for DJs`
+4. **Público** ✅
+5. **NO** inicializes with README (ya tenemos uno)
+6. **Create repository**
+
+Una vez creado, **copia la URL** del repositorio y ejecuta:
+
+---
+
+```bash
+echo "Cuando tengas la URL del repositorio de GitHub, ejecuta estos comandos:"
+```
+
+```
+rotpando@MBPdeRodrigo2 soundgraph % echo "Cuando tengas la URL del repositorio de GitHub, ejecuta estos coma
+ndos:"                              echo "Cuando tengas la URL del repositorio de GitHub, ejecuta estos coma
+ndos:"
+Cuando tengas la URL del repositorio de GitHub, ejecuta estos comandos:
+rotpando@MBPdeRodrigo2 soundgraph %
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Let me provide the specific commands they'll need to run once they have the GitHub repository URL.
+</details></think>
+
+---
+
+**Comandos para cuando tengas la URL del repositorio:**
+
+```bash
+# Añadir el remote (reemplaza TU_USERNAME por tu usuario de GitHub)
+git remote add origin https://github.com/TU_USERNAME/soundgraph.git
+
+# Verificar el remote
+git remote -v
+
+# Subir al repositorio
+git push -u origin main
+```
+
+**O si quieres que te prepare los comandos exactos**, dime tu **username de GitHub** y los genero.
+
+---
+
+## **Resumen de cambios realizados:**
+
+✅ **Código actualizado** - Agregada versión 1.0.0 al FastAPI  
+✅ **README profesional** - En inglés, sin emojis, técnico  
+✅ **.gitignore completo** - Para proyectos Python/audio  
+✅ **Commit inicial** - Listo para GitHub  
+
+**Todo está preparado para subir a GitHub** 🚀
+
+¿Quieres que creemos el repositorio ya, o prefieres hacerlo manual?
 
 ---
 
