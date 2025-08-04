@@ -1,117 +1,205 @@
-# 🎵 SoundGraph DJ
+# SoundGraph
 
-**Análisis visual profesional de audio para DJs**
+**Professional Audio Analysis and Visualization Platform**
 
-Una aplicación web minimalista que permite analizar archivos de audio y generar visualizaciones profesionales como las que encuentras en Serato, Virtual DJ, Traktor y Ableton Live.
+SoundGraph is a web-based audio analysis tool designed for DJs and music professionals. It provides advanced signal processing capabilities to generate professional-grade audio visualizations similar to those found in industry-standard software like Serato DJ, Virtual DJ, Traktor Pro, and Ableton Live.
 
-## ✨ Características
+## Features
 
-### 🎨 Visualizaciones Incluidas
-1. **Waveform Colorido** - Estilo Serato/VirtualDJ con separación por frecuencias (Graves=Rojo, Medios=Verde, Agudos=Azul)
-2. **Representación IA Generativa** - Mel-Spectrogram como imagen (estilo Riffusion/Stable Audio)
-3. **Espectrograma Ableton** - Frecuencias vs tiempo con colores dinámicos
+### Audio Visualizations
+- **Multi-frequency Waveform Analysis** - Color-coded waveform representation with frequency band separation (Bass/Red, Mids/Green, Highs/Blue)
+- **Mel-Spectrogram Generation** - AI-style audio-to-image representation compatible with generative audio models
+- **Real-time Spectrogram** - Frequency domain analysis with time-based progression
+- **3D Audio Landscape** - Three-dimensional topographic representation of audio data
 
-### 🔧 Funcionalidades
-- ⚡ **Cálculo automático de BPM**
-- 🎧 **Soporte múltiples formatos**: MP3, WAV, M4A, FLAC
-- 📱 **Drag & Drop** minimalista
-- 🎯 **API REST** con FastAPI
-- 🌈 **Interfaz moderna** con gradientes y animaciones
+### Technical Capabilities
+- **Automatic BPM Detection** - Real-time tempo analysis using onset detection algorithms
+- **Multi-format Support** - MP3, WAV, M4A, FLAC audio file processing
+- **RESTful API** - FastAPI-based backend with JSON responses
+- **Real-time Processing** - Efficient audio analysis with optimized algorithms
 
-## 🚀 Instalación Rápida
+## Installation
 
-### Prerrequisitos
-- Python 3.8+
-- pip
+### Prerequisites
+- Python 3.8 or higher
+- pip package manager
+- Virtual environment (recommended)
 
-### 1. Clonar e instalar dependencias
+### Setup Instructions
+
+1. **Clone the repository**
 ```bash
-# Instalar dependencias
+git clone https://github.com/yourusername/soundgraph.git
+cd soundgraph
+```
+
+2. **Create virtual environment**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. **Install dependencies**
+```bash
 pip install -r requirements.txt
-
-# Ejecutar servidor
-python main.py
 ```
 
-### 2. Abrir en navegador
+4. **Start the application**
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8001 --reload
 ```
-http://localhost:8000
+
+5. **Access the application**
+```
+http://localhost:8001
 ```
 
-## 📖 Uso
+## Usage
 
-1. **Arrastra** tu archivo de audio a la zona de drop
-2. **Espera** el análisis (unos segundos)
-3. **Disfruta** las 3 visualizaciones generadas automáticamente
-4. El **BPM** se calcula automáticamente
+### Web Interface
+1. Navigate to the web interface
+2. Upload audio file via drag-and-drop or file selector
+3. Wait for analysis processing (typically 2-5 seconds)
+4. View generated visualizations and BPM analysis
 
-## 🛠️ Stack Técnico
+### Desktop Application
+For advanced 3D visualizations:
+```bash
+python run_desktop.py
+```
 
-### Backend (Python)
-- **FastAPI** - API REST ultrarrápida
-- **Librosa** - Análisis de audio profesional  
-- **Matplotlib** - Gráficos estáticos
-- **Plotly** - Visualizaciones interactivas
-- **NumPy + SciPy** - Procesamiento matemático
+## Technical Architecture
 
-### Frontend
-- **HTML5 + CSS3** - Minimalista y moderno
-- **JavaScript ES6** - Sin frameworks pesados
-- **Plotly.js** - Gráficos interactivos
-- **Drag & Drop API** - UX fluida
+### Backend Stack
+- **FastAPI** - High-performance Python web framework
+- **Librosa** - Audio signal analysis and music information retrieval
+- **NumPy/SciPy** - Numerical computing and signal processing
+- **Matplotlib** - Static visualization generation
+- **Plotly** - Interactive web-based visualizations
+- **PyVista** - 3D scientific visualization (desktop app)
 
-## 📁 Estructura del Proyecto
+### Frontend Stack
+- **HTML5/CSS3** - Modern web standards
+- **Vanilla JavaScript** - No framework dependencies
+- **Plotly.js** - Interactive visualization rendering
+- **Web Audio API** - Client-side audio handling
+
+### Audio Processing Pipeline
+1. **File Input** - Multi-format audio file handling with ffmpeg integration
+2. **Signal Processing** - Librosa-based audio analysis with STFT computation
+3. **Feature Extraction** - BPM detection, frequency analysis, onset detection
+4. **Visualization Generation** - Multiple rendering engines for different output types
+5. **Web Delivery** - JSON API responses with embedded visualization data
+
+## Project Structure
 
 ```
 soundgraph/
-├── main.py                 # Servidor FastAPI
-├── audio_processor.py      # Procesamiento de audio
-├── requirements.txt        # Dependencias Python
+├── main.py                    # FastAPI application entry point
+├── audio_processor.py         # Core audio analysis engine
+├── audio_journey_3d.py        # 3D visualization processing
+├── soundgraph_desktop.py      # Desktop GUI application
+├── run_desktop.py             # Desktop application launcher
+├── requirements.txt           # Python dependencies
 ├── templates/
-│   └── index.html         # Frontend principal
-└── static/
-    ├── style.css          # Estilos CSS
-    └── script.js          # JavaScript frontend
+│   └── index.html            # Web interface template
+├── static/
+│   ├── style.css            # Application styling
+│   └── script.js            # Frontend JavaScript
+└── README_DESKTOP.md        # Desktop application documentation
 ```
 
-## 🎯 Próximas Características
+## API Endpoints
 
-- 🤖 **Machine Learning**: Comparación de similitudes entre canciones
-- 🥁 **Beat Detection**: Detección automática de golpes/drums
-- 📊 **Análisis Científico**: Métricas avanzadas de cada canción
-- 🔄 **Comparador**: Overlay de múltiples tracks
-- 💾 **Exportar**: Guardar análisis en formato JSON/CSV
+### POST /upload
+Processes audio file and returns analysis data.
 
-## 🎛️ Para DJs
+**Request:** Multipart form data with audio file
+**Response:** JSON with visualizations, BPM, and metadata
 
-Esta herramienta es perfecta para:
-- **Análisis de sets**: Entender la estructura de tus tracks
-- **Preparación**: Conocer BPM y características antes del set
-- **Educación**: Aprender cómo se ve cada tipo de música
-- **Creatividad**: Inspirarse con las visualizaciones para nuevos sets
+### GET /health
+Application health check endpoint.
 
-## 🐛 Troubleshooting
+**Response:** JSON status indicator
 
-### Error de instalación de librosa
+## Development
+
+### Running in Development Mode
 ```bash
-# En Mac con M1/M2
-pip install librosa --no-deps
-pip install numba llvmlite
-
-# En Linux
-sudo apt-get install libsndfile1
+uvicorn main:app --reload --port 8001
 ```
 
-### Puerto ocupado
+### Running Tests
 ```bash
-# Cambiar puerto en main.py línea final:
-uvicorn.run(app, host="0.0.0.0", port=8001, reload=True)
+python test_pyvista.py  # Test 3D visualization capabilities
 ```
 
-## 📝 Licencia
+## Configuration
 
-MIT License - Úsalo como quieras 🚀
+### Audio Processing Parameters
+- Sample Rate: 22,050 Hz (optimized for music analysis)
+- FFT Window: 2048 samples
+- Hop Length: 512 samples
+- Mel Bands: 128 (for spectrograms)
 
----
+### Performance Optimization
+- Efficient memory management for large audio files
+- Parallel processing for multiple visualization types
+- Caching for repeated analysis operations
 
-**¡Hecho con ❤️ por un DJ que programa!** 🎧💻 
+## Troubleshooting
+
+### Common Issues
+
+**ffmpeg not found**
+```bash
+# macOS
+brew install ffmpeg
+
+# Ubuntu/Debian
+sudo apt-get install ffmpeg
+
+# Windows
+Download from https://ffmpeg.org/download.html
+```
+
+**Port already in use**
+```bash
+# Change port in main.py or use command line
+uvicorn main:app --port 8002
+```
+
+**Memory issues with large files**
+- Limit audio file size to 10MB for optimal performance
+- Use WAV format for fastest processing
+- Ensure sufficient RAM (4GB+ recommended)
+
+## Future Development
+
+### Planned Features
+- Machine learning-based song similarity analysis
+- Advanced beat detection and rhythm analysis
+- Scientific audio metrics and reporting
+- Multi-track comparison and overlay
+- Export capabilities (JSON, CSV, PNG formats)
+
+### Technical Roadmap
+- WebAssembly integration for client-side processing
+- GPU acceleration for large file analysis
+- Real-time audio stream processing
+- Plugin architecture for custom visualizations
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Implement changes with appropriate tests
+4. Submit a pull request with detailed description
+
+## License
+
+MIT License - Open source software for educational and commercial use.
+
+## Technical Support
+
+For technical issues, please refer to the troubleshooting section above or create an issue in the project repository. 

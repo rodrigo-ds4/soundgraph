@@ -7,7 +7,11 @@ import os
 import tempfile
 from audio_processor import AudioProcessor
 
-app = FastAPI(title="SoundGraph DJ", description="Análisis visual de audio para DJs")
+app = FastAPI(
+    title="SoundGraph", 
+    description="Professional audio analysis and visualization platform for DJs",
+    version="1.0.0"
+)
 
 # Configurar archivos estáticos y templates
 app.mount("/static", StaticFiles(directory="static"), name="static")
