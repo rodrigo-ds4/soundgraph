@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundGraph - Audio Analysis Platform</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header minimalista -->
+        <header>
+            <h1>SoundGraph</h1>
+            <p>Professional Audio Analysis Platform</p>
+        </header>
+
+        <!-- Zona de upload -->
+        <div class="upload-section">
+            <div id="dropZone" class="drop-zone">
+                <div class="upload-icon"></div>
+                <h3>Drop your audio file here</h3>
+                <p>Supports MP3, WAV, M4A, FLAC</p>
+                <input type="file" id="fileInput" accept=".mp3,.wav,.m4a,.flac" hidden>
+                <button id="selectBtn" class="btn-primary">Select File</button>
+                
+                <!-- BOTÓN NUEVO: VIAJE 3D -->
+                <button class="journey-trigger-btn" id="journeyTrigger" style="display: none;">
+                    Generate 3D Journey
+                </button>
+            </div>
+        </div>
+
+        <!-- Información del track -->
+        <div id="trackInfo" class="track-info hidden">
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">File:</span>
+                    <span id="fileName"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Duration:</span>
+                    <span id="duration"></span>
+                </div>
+                <div class="info-item bpm-highlight">
+                    <span class="label">BPM:</span>
+                    <span id="bpm"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="loadingSpinner" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Analyzing audio...</p>
+        </div>
+
+        <!-- Visualizaciones -->
+        <div id="visualizations" class="visualizations hidden">
+            
+            <!-- 1. Waveform Realista -->
+            <div class="viz-section">
+                <h2>Multi-frequency Waveform Analysis</h2>
+                <div id="colorfulWaveform" class="plot-container"></div>
+            </div>
+
+            <!-- 2. Mel-Spectrogram IA -->
+            <div class="viz-section">
+                <h2>Mel-Spectrogram Representation</h2>
+                <div id="melSpectrogram" class="plot-container">
+                    <img id="melSpectrogramImg" alt="Mel-Spectrogram" />
+                </div>
+            </div>
+
+            <!-- VIAJE 3D COMPLETO - NUEVA FUNCIONALIDAD -->
+            <div id="journeySection" class="viz-section-main" style="display: none;">
+                <button id="closeJourney" class="close-btn">×</button>
+                <h2>3D Audio Journey - Explore Your Track</h2>
+                <div class="journey-controls">
+                    <button id="playJourney" class="journey-btn">Play Journey</button>
+                    <button id="pauseJourney" class="journey-btn">Pause</button>
+                    <span id="journeyTime">0:00 / 0:00</span>
+                </div>
+                <div id="journeyVisualization" class="journey-container"></div>
+                <div class="journey-info">
+                    <span>BASS</span>
+                    <span>MID</span>
+                    <span>HIGH</span>
+                </div>
+            </div>
+            
+            <!-- 3D Paisaje Sonoro PRINCIPAL -->
+            <div class="viz-section-main" id="fullscreen3D" style="display: none;">
+                <button id="closeFullscreen" class="close-btn">×</button>
+                <h2>3D Audio Surface - Fullscreen</h2>
+                <div id="melSpectrogram3D" class="plot-container-3d-main"></div>
+            </div>
+            
+            <!-- Vista Normal 3D CON OPCIONES -->
+            <div class="viz-section">
+                <h2>3D Audio Landscape - 
+                    <button id="openFullscreen" class="fullscreen-btn">View Fullscreen</button>
+                    
+                    <!-- OPCIONES DE VISUALIZACIÓN -->
+                    <div class="viz-options">
+                        <label>Type:</label>
+                        <select id="viz3DType" class="viz-select">
+                            <option value="surface">Surface</option>
+                            <option value="wireframe">Wireframe</option>
+                            <option value="scatter3d">3D Points</option>
+                        </select>
+                        
+                        <label>Color:</label>
+                        <select id="viz3DColor" class="viz-select">
+                            <option value="viridis">Viridis</option>
+                            <option value="plasma">Plasma</option>
+                            <option value="hot">Hot</option>
+                            <option value="cool">Cool</option>
+                        </select>
+                    </div>
+                </h2>
+                <div id="melSpectrogram3DPreview" class="plot-container"></div>
+            </div>
+
+            <!-- Reproductor de Audio con Sincronización 3D -->
+            <div class="viz-section">
+                <h2>Audio Player</h2>
+                <div class="audio-player">
+                    <audio id="audioPlayer" controls style="width: 100%; margin-bottom: 15px;">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="player-info">
+                        <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+                        <div class="progress-bar">
+                            <div id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Error messages -->
+        <div id="errorMessage" class="error-message hidden"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html> 
