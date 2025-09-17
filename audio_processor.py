@@ -13,21 +13,33 @@ import json
 from pydub import AudioSegment
 import tempfile
 import os
+import logging
+from config import AudioConfig
+
+# Configure logging for audio processor
+logger = logging.getLogger(__name__)
 
 class AudioProcessor:
     def __init__(self):
-        self.sample_rate = 22050  # Sample rate estándar para análisis
+        self.sample_rate = AudioConfig.SAMPLE_RATE_STANDARD  # Default sample rate
+        self.config = AudioConfig()
         
     async def process_audio(self, file_path: str, filename: str):
         """Procesar archivo de audio y generar todas las visualizaciones"""
         try:
+            # Get file size for adaptive configuration
+            file_size = os.path.getsize(file_path)
+            adaptive_config = self.config.get_config_for_file_size(file_size)
+            
+            logger.info(f"Processing {filename} ({file_size / 1024 / 1024:.1f}MB) with {adaptive_config['quality_level']} quality")
+            
             # Convertir MP3 a WAV temporalmente si es necesario
             processed_path = file_path
             if filename.lower().endswith('.mp3'):
                 processed_path = self._convert_mp3_to_wav(file_path)
             
-            # Cargar audio
-            y, sr = librosa.load(processed_path, sr=self.sample_rate)
+            # Cargar audio con configuración adaptiva
+            y, sr = librosa.load(processed_path, sr=adaptive_config['sample_rate'])
             duration = len(y) / sr
             
             # Limpiar archivo temporal si se creó
@@ -37,17 +49,20 @@ class AudioProcessor:
             # Calcular BPM
             bpm = self.calculate_bpm(y, sr)
             
-            # Generar visualizaciones
-            waveform_data = self.generate_colorful_waveform(y, sr)
-            mel_spectrogram_img = self.generate_mel_spectrogram_image(y, sr)
-            mel_spectrogram_3d = self.generate_mel_spectrogram_3d(y, sr)
-            frequency_analyzer = self.generate_frequency_analyzer(y, sr)
+            # Generar visualizaciones con configuración adaptiva
+            waveform_data = self.generate_colorful_waveform(y, sr, adaptive_config)
+            mel_spectrogram_img = self.generate_mel_spectrogram_image(y, sr, adaptive_config)
+            mel_spectrogram_3d = self.generate_mel_spectrogram_3d(y, sr, adaptive_config)
+            frequency_analyzer = self.generate_frequency_analyzer(y, sr, adaptive_config)
             
             return {
                 "filename": filename,
                 "duration": round(duration, 2),
                 "bpm": round(bpm, 1),
                 "sample_rate": sr,
+                "processing_quality": adaptive_config['quality_level'],
+                "processing_message": adaptive_config['processing_message'],
+                "file_size_mb": round(file_size / 1024 / 1024, 1),
                 "waveform": waveform_data,
                 "mel_spectrogram": mel_spectrogram_img,
                 "mel_spectrogram_3d": mel_spectrogram_3d,
@@ -67,12 +82,16 @@ class AudioProcessor:
         except:
             return 120.0  # BPM por defecto si falla la detección
     
-    def generate_colorful_waveform(self, y, sr):
+    def generate_colorful_waveform(self, y, sr, config=None):
         """Generar waveform realista con múltiples bandas de frecuencia"""
         try:
-            # Parámetros para mayor resolución
-            hop_length = 256  # Más resolución temporal
-            n_fft = 2048
+            # Usar configuración adaptiva o valores por defecto
+            if config:
+                hop_length = config['hop_length']
+                n_fft = AudioConfig.N_FFT
+            else:
+                hop_length = AudioConfig.HOP_LENGTH_STANDARD
+                n_fft = AudioConfig.N_FFT
             
             # Calcular STFT
             D = librosa.stft(y, hop_length=hop_length, n_fft=n_fft)
@@ -155,16 +174,24 @@ class AudioProcessor:
             print(f"Error en waveform: {e}")
             return {"error": str(e)}
     
-    def generate_mel_spectrogram_image(self, y, sr):
+    def generate_mel_spectrogram_image(self, y, sr, config=None):
         """Generar imagen mel-spectrogram estilo IA generativa con alta resolución"""
         try:
-            # Crear mel-spectrogram con MÁS resolución
+            # Usar configuración adaptiva o valores por defecto
+            if config:
+                n_mels = config['n_mels']
+                hop_length = config['hop_length']
+            else:
+                n_mels = AudioConfig.N_MELS_STANDARD
+                hop_length = AudioConfig.HOP_LENGTH_STANDARD
+            
+            # Crear mel-spectrogram con configuración adaptiva
             mel_spec = librosa.feature.melspectrogram(
                 y=y, sr=sr, 
-                n_mels=256,  # Más bandas mel (era 128)
-                fmax=sr//2,  # Rango completo de frecuencias
-                hop_length=256,  # Más resolución temporal (era 512)
-                n_fft=2048   # Más resolución frecuencial
+                n_mels=n_mels,
+                fmax=sr//2,
+                hop_length=hop_length,
+                n_fft=AudioConfig.N_FFT
             )
             mel_spec_db = librosa.power_to_db(mel_spec, ref=np.max)
             
@@ -209,15 +236,21 @@ class AudioProcessor:
             print(f"Error en mel-spectrogram: {e}")
             return None
     
-    def generate_frequency_analyzer(self, y, sr):
+    def generate_frequency_analyzer(self, y, sr, config=None):
         """Generar analizador de espectro por frames - 'fotos de cada segundo'"""
         try:
-            # Dividir audio en frames de ~1 segundo
+            # Usar configuración adaptiva para el hop_length
+            if config:
+                base_hop_length = config['hop_length']
+            else:
+                base_hop_length = AudioConfig.HOP_LENGTH_STANDARD
+            
+            # Dividir audio en frames
             frame_length = sr  # 1 segundo de audio
-            hop_length = sr // 2  # Overlap de 50%
+            hop_length = max(sr // 4, base_hop_length)  # Adaptar para análisis temporal
             
             # Calcular STFT para cada frame
-            D = librosa.stft(y, hop_length=hop_length, n_fft=2048)
+            D = librosa.stft(y, hop_length=hop_length, n_fft=AudioConfig.N_FFT)
             magnitude = np.abs(D)
             
             # Convertir a dB
@@ -287,17 +320,25 @@ class AudioProcessor:
             print(f"Error convirtiendo MP3: {e}")
             return mp3_path  # Devolver el original y que librosa lo intente
     
-    def generate_mel_spectrogram_3d(self, y, sr):
+    def generate_mel_spectrogram_3d(self, y, sr, config=None):
         """Generar mel-spectrogram 3D con INTERPOLACIÓN SUAVE y alta resolución"""
         try:
-            # Crear mel-spectrogram de ALTA RESOLUCIÓN
+            # Usar configuración adaptiva o valores por defecto
+            if config:
+                n_mels = min(config['n_mels'] // 2, 64)  # Reducir para 3D (más performance)
+                hop_length = config['hop_length']
+            else:
+                n_mels = 50
+                hop_length = AudioConfig.HOP_LENGTH_STANDARD
+            
+            # Crear mel-spectrogram adaptivo para 3D
             mel_spec = librosa.feature.melspectrogram(
                 y=y, sr=sr,
-                n_mels=50,          # Más bandas para mejor resolución
-                fmax=sr//2,         # Frecuencia máxima = Nyquist
-                hop_length=512,     # Más resolución temporal
-                n_fft=2048,
-                window='hann'       # Ventana Hann para suavizado
+                n_mels=n_mels,
+                fmax=sr//2,
+                hop_length=hop_length,
+                n_fft=AudioConfig.N_FFT,
+                window='hann'
             )
             
             # Convertir a dB y normalizar

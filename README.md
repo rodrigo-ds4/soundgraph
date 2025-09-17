@@ -29,7 +29,7 @@ SoundGraph is a powerful web-based audio analysis tool specifically designed for
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/soundgraph.git
+git clone https://github.com/rodrigo-ds4/soundgraph.git
 cd soundgraph
 ```
 
@@ -139,8 +139,9 @@ python test_pyvista.py  # Test 3D visualization capabilities
 ### Audio Processing Parameters
 - Sample Rate: 22,050 Hz (optimized for music analysis)
 - FFT Window: 2048 samples
-- Hop Length: 512 samples
-- Mel Bands: 128 (for spectrograms)
+- Hop Length: 256-512 samples (adaptive)
+- Mel Bands: 128-256 (for spectrograms, variable resolution)
+- Max File Size: 25MB for optimal performance
 
 ### Performance Optimization
 - Efficient memory management for large audio files
@@ -170,8 +171,9 @@ uvicorn main:app --port 8002
 ```
 
 **Memory issues with large files**
-- Limit audio file size to 10MB for optimal performance
+- File size limit: 25MB maximum (automatically enforced)
 - Use WAV format for fastest processing
+- MP3/M4A files are automatically converted to WAV
 - Ensure sufficient RAM (4GB+ recommended)
 
 ## Future Development
